@@ -52,7 +52,7 @@ app.post('/', function(req, res){
             console.log(JSON.parse(data));
         });
     });
-    // request.write(jsonData);
+    request.write(jsonData);
     request.end();
 });
 
@@ -61,15 +61,11 @@ app.post('/failure', function(req, res){
 });
 
 
-
-
-
-app.listen(3000, ()=>{
-    console.log('Server is running on port 3000');
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log('Server is running');
 });
 
 
+//Mailchimp API key 358f48741c0379c26600642c9d677211-us7
 
-//apiKey mailchimp 358f48741c0379c26600642c9d677211-us7
-
-//list id 417ba350cd
+//Mailchimp List ID 417ba350cd
